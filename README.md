@@ -2,29 +2,29 @@
 Azure bicep code
 
 Bicep werkwijze:
-# Creëer een bicep template met de gewenste functionaliteit, voorbeelden zijn te vinden op:
+Creëer een bicep template met de gewenste functionaliteit, voorbeelden zijn te vinden op:
 Azure resource reference - Bicep & ARM template reference | Microsoft Docs
-# Deploy  het template vervolgens in een nieuwe ResourceGroup:
+Deploy  het template vervolgens in een nieuwe ResourceGroup:
 <code>
 az group create --name exampleRG --location westeurope
 az deployment group create --resource-group exampleRG --template-file main.bicep --parameters adminUsername=<admin-username>
 </code>
 
-# Review deployed resources:
+Review deployed resources:
 <code>
 az resource list --resource-group exampleRG
 </code>
 
-# Aanpassen van de deployment, maak een aanpassing in het template (bijv. vmSize)
-# Eerst een what-if run om te controleren wat zou worden aangepast:
+Aanpassen van de deployment, maak een aanpassing in het template (bijv. vmSize)
+Eerst een what-if run om te controleren wat zou worden aangepast:
 <code>
 az deployment group what-if --resource-group exampleRG --template-file main.bicep --parameters adminUsername=<admin-username>
 </code>
-# Indien akkoord, deployen:
+Indien akkoord, deployen:
 <code>
 az deployment group create --resource-group exampleRG --template-file main.bicep --parameters adminUsername=<admin-username>
 </code>
-# Clean up resources:
+Clean up resources:
 <code>
 az group delete --name exampleRG
 </code>
