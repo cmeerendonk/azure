@@ -38,3 +38,5 @@ Clean up resources:
 <code>
   az group delete --name exampleRG
 </code>
+
+[![Deploy to Azure](https://azuredeploy.net/deploybutton.svg)](https://deploy.azure.com/?repository=https://github.com/cmeerendonk/azure?ptmpl=vm.bicep)
