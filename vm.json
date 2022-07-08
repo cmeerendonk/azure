@@ -62,13 +62,47 @@
                 "description": "Name of the virtual machine."
             }
         },
-        "resourceTags": {
-            "type": "object",
-            "defaultValue": {
-                "Environment": "Dev",
-                "Kostenplaats": "1145",
-                "ExcludeFromBackup": "No",
-                "AutoStartStop": "Ma-Vr_07-19"
+        "Environment": {
+            "type": "string",
+            "defaultValue": "Ontwikkel",
+            "allowedValues": [
+                "Ontwikkel",
+                "Test",
+                "Acceptatie",
+                "Productie"
+            "metadata": {
+                "description": "OTAP status."
+            }
+        },
+        "Kostenplaats": {
+            "type": "string",
+            "defaultValue": "1145",
+            "metadata": {
+                "description": "Kostenplaats"
+            }
+        },
+        "ExcludeFromBackup": {
+            "type": "string",
+            "defaultValue": "No",
+            "allowedValues": [
+                "No",
+                "Yes"
+            ],
+            "metadata": {
+                "description": "Uitzonderen van standaard backup?"
+            }
+        },
+        "AutoStartStop": {
+            "type": "string",
+            "defaultValue": "Ma-Vr_07-19",
+            "allowedValues": [
+                "Manual",
+                "Ma-Vr_07-19",
+                "Ma-Zo_07-19",
+                "AutoShutDown"
+            ],
+            "metadata": {
+                "description": "Stop de VM buiten kantoortijden"
             }
         }
     },
@@ -170,7 +204,12 @@
             "apiVersion": "2021-03-01",
             "name": "[parameters('vmName')]",
             "location": "[variables('location')]",
-            "tags": "[parameters('resourceTags')]",
+            "tags": {
+                "Environment": "[parameters('Environment')]",
+                "Kostenplaats": "[parameters('Kostenplaats')]",
+                "ExcludeFromBackup": "[parameters('ExcludeFromBackup')]",
+                "AutoStartStop": "[parameters('AutoStartStop')]"
+            }
             "properties": {
                 "hardwareProfile": {
                     "vmSize": "[parameters('vmSize')]"
