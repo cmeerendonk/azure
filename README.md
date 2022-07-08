@@ -39,6 +39,4 @@ Clean up resources:
   az group delete --name exampleRG
 </code>
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fcmeerendonk%2Fazure%2Fmain%2Fvm.bicep)
-
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fcmeerendonk%2Fazure%2Fmain%2Fvm.json)
