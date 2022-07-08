@@ -76,8 +76,10 @@
             }
         },
         "Kostenplaats": {
-            "type": "string",
-            "defaultValue": "1145",
+            "type": "int",
+            "minValue": 0,
+            "maxValue": 9999,
+            "defaultValue": 1145,
             "metadata": {
                 "description": "Kostenplaats"
             }
