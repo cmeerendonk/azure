@@ -62,6 +62,15 @@
           "description": "Name of the virtual machine."
         }
       }
+      "resourceTags": {
+        "type": "object",
+        "defaultValue": {
+          "Environment": "Dev",
+          "Kostenplaats": "1145",
+          "ExcludeFromBackup": "No",
+          "AutoStartStop": "Ma-Vr_07-19"
+        }
+      }
     },
     "variables": {
       "storageAccountName": "[format('bootdiags{0}', uniqueString(resourceGroup().id))]",
@@ -161,6 +170,7 @@
         "apiVersion": "2021-03-01",
         "name": "[parameters('vmName')]",
         "location": "[variables('location')]",
+        "tags": "[parameters('resourceTags')]",
         "properties": {
           "hardwareProfile": {
             "vmSize": "[parameters('vmSize')]"
