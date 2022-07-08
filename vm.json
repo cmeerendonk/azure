@@ -61,7 +61,7 @@
         "metadata": {
           "description": "Name of the virtual machine."
         }
-      }
+      },
       "resourceTags": {
         "type": "object",
         "defaultValue": {
