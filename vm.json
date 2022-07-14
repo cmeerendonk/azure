@@ -22,6 +22,10 @@
                 "description": "Password for the Virtual Machine."
             }
         },
+        "subnetName": {
+            "type": "string",
+            "allowedValues": [parameters('subnetName').list]
+        }
         "OSVersion": {
             "type": "string",
             "defaultValue": "2019-datacenter-gensecond",
